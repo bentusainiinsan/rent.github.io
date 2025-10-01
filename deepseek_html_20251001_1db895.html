@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Opportunities - Sonipat Home Service</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #2e7d32;
+            --primary-light: #4caf50;
+            --primary-dark: #1b5e20;
+            --accent: #ff9800;
+            --light: #f5f5f5;
+            --dark: #333;
+            --gray: #757575;
+            --white: #ffffff;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+            color: var(--dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            color: var(--white);
+        }
+        
+        .logo {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .tagline {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .career-container {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: var(--primary-dark);
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 2rem;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--primary-light);
+            position: relative;
+        }
+        
+        h1:after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .intro-text {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .job-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .job-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .job-header {
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+            color: var(--white);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .job-icon {
+            font-size: 2rem;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+        }
+        
+        .job-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        
+        .job-body {
+            padding: 20px;
+        }
+        
+        .job-details {
+            margin-bottom: 20px;
+        }
+        
+        .detail-item {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            min-width: 120px;
+            color: var(--primary-dark);
+        }
+        
+        .detail-value {
+            color: var(--dark);
+        }
+        
+        .requirements {
+            margin-top: 20px;
+        }
+        
+        .requirements h3 {
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .requirements ul {
+            padding-left: 20px;
+        }
+        
+        .requirements li {
+            margin-bottom: 8px;
+            color: var(--gray);
+        }
+        
+        .apply-btn {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+            color: var(--white);
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        .apply-btn:hover {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .benefits-section {
+            margin-top: 50px;
+            padding: 30px;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+        
+        .benefits-section h2 {
+            color: var(--primary-dark);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .benefit-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e8f5e9;
+            border-radius: 50%;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            padding: 25px;
+            background: #f0f7f0;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .contact-item {
+            margin: 15px;
+            min-width: 250px;
+        }
+        
+        .contact-item i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .contact-item h3 {
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin-top: 50px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+            color: var(--white);
+            border-radius: 10px;
+        }
+        
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .cta-btn:hover {
+            background: #f57c00;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--white);
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .hindi-text {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+        }
+        
+        @media (max-width: 768px) {
+            .career-container {
+                padding: 20px;
+            }
+            
+            header {
+                padding: 15px 0;
+            }
+            
+            .logo {
+                font-size: 2.2rem;
+            }
+            
+            .job-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .career-container {
+                padding: 15px;
+            }
+            
+            .logo {
+                font-size: 1.8rem;
+            }
+            
+            .tagline {
+                font-size: 1.1rem;
+            }
+            
+            h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">Sonipat Home Service</div>
+            <div class="tagline">Join Our Team of Professional Service Providers</div>
+        </header>
+        
+        <div class="career-container">
+            <h1>Career Opportunities</h1>
+            
+            <div class="intro-text">
+                <p>We're looking for experienced and skilled mechanics to join our growing team. At Sonipat Home Service, we value professionalism, expertise, and customer satisfaction. If you have the skills and experience we're looking for, we'd love to hear from you.</p>
+            </div>
+            
+            <div class="job-grid">
+                <!-- AC Mechanic Job in Hindi -->
+                <div class="job-card">
+                    <div class="job-header">
+                        <div class="job-icon">
+                            <i class="fas fa-snowflake"></i>
+                        </div>
+                        <div class="job-title hindi-text">एसी मैकेनिक</div>
+                    </div>
+                    <div class="job-body">
+                        <div class="job-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Position:</span>
+                                <span class="detail-value hindi-text">एसी इंस्टालेशन और रिपेयर टेक्नीशियन</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Experience:</span>
+                                <span class="detail-value hindi-text">न्यूनतम 2 वर्ष</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Salary:</span>
+                                <span class="detail-value">₹13,000 - ₹18,000/month</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Location:</span>
+                                <span class="detail-value hindi-text">सोनीपत और आसपास के इलाके</span>
+                            </div>
+                        </div>
+                        
+                        <div class="requirements">
+                            <h3 class="hindi-text">आवश्यकताएं:</h3>
+                            <ul class="hindi-text">
+                                <li>एसी इंस्टालेशन, रिपेयर और मेंटेनेंस में सिद्ध अनुभव</li>
+                                <li>विभिन्न एसी ब्रांड्स और मॉडल्स की जानकारी</li>
+                                <li>गैस चार्जिंग और इलेक्ट्रिकल कंपोनेंट्स को हैंडल करने की क्षमता</li>
+                                <li>अपने टूल्स और ट्रांसपोर्टेशन को प्राथमिकता दी जाएगी</li>
+                                <li>उत्कृष्ट ग्राहक सेवा कौशल</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="#" class="apply-btn">Apply Now</a>
+                    </div>
+                </div>
+                
+                <!-- Fridge Mechanic Job in Hindi -->
+                <div class="job-card">
+                    <div class="job-header">
+                        <div class="job-icon">
+                            <i class="fas fa-temperature-low"></i>
+                        </div>
+                        <div class="job-title hindi-text">फ्रिज मैकेनिक</div>
+                    </div>
+                    <div class="job-body">
+                        <div class="job-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Position:</span>
+                                <span class="detail-value hindi-text">फ्रिज रिपेयर टेक्नीशियन</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Experience:</span>
+                                <span class="detail-value hindi-text">न्यूनतम 2 वर्ष</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Salary:</span>
+                                <span class="detail-value">₹13,000 - ₹18,000/month</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Location:</span>
+                                <span class="detail-value hindi-text">सोनीपत और आसपास के इलाके</span>
+                            </div>
+                        </div>
+                        
+                        <div class="requirements">
+                            <h3 class="hindi-text">आवश्यकताएं:</h3>
+                            <ul class="hindi-text">
+                                <li>फ्रिज रिपेयर और मेंटेनेंस में अनुभव</li>
+                                <li>कूलिंग सिस्टम और इलेक्ट्रिकल कंपोनेंट्स की जानकारी</li>
+                                <li>कंप्रेसर समस्याओं का निदान और ठीक करने की क्षमता</li>
+                                <li>अपने बेसिक टूल्स आवश्यक</li>
+                                <li>अच्छे संचार कौशल</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="#" class="apply-btn">Apply Now</a>
+                    </div>
+                </div>
+                
+                <!-- Washing Machine Mechanic Job in Hindi -->
+                <div class="job-card">
+                    <div class="job-header">
+                        <div class="job-icon">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <div class="job-title hindi-text">वाशिंग मशीन मैकेनिक</div>
+                    </div>
+                    <div class="job-body">
+                        <div class="job-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Position:</span>
+                                <span class="detail-value hindi-text">वाशिंग मशीन रिपेयर टेक्नीशियन</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Experience:</span>
+                                <span class="detail-value hindi-text">न्यूनतम 2 वर्ष</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Salary:</span>
+                                <span class="detail-value">₹13,000 - ₹18,000/month</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Location:</span>
+                                <span class="detail-value hindi-text">सोनीपत और आसपास के इलाके</span>
+                            </div>
+                        </div>
+                        
+                        <div class="requirements">
+                            <h3 class="hindi-text">आवश्यकताएं:</h3>
+                            <ul class="hindi-text">
+                                <li>टॉप और फ्रंट लोड वाशिंग मशीनों की मरम्मत में अनुभव</li>
+                                <li>मोटर, ड्रम और इलेक्ट्रॉनिक कंट्रोल सिस्टम की जानकारी</li>
+                                <li>ड्रेनेज समस्याओं का निवारण और ठीक करने की क्षमता</li>
+                                <li>आवश्यक टूल्स अपने पास होने चाहिए</li>
+                                <li>पेशेवर व्यवहार</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="#" class="apply-btn">Apply Now</a>
+                    </div>
+                </div>
+                
+                <!-- Geyser Mechanic Job in Hindi -->
+                <div class="job-card">
+                    <div class="job-header">
+                        <div class="job-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="job-title hindi-text">गीजर मैकेनिक</div>
+                    </div>
+                    <div class="job-body">
+                        <div class="job-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Position:</span>
+                                <span class="detail-value hindi-text">गीजर इंस्टालेशन और रिपेयर टेक्नीशियन</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Experience:</span>
+                                <span class="detail-value hindi-text">न्यूनतम 1.5 वर्ष</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Salary:</span>
+                                <span class="detail-value">₹13,000 - ₹18,000/month</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Location:</span>
+                                <span class="detail-value hindi-text">सोनीपत और आसपास के इलाके</span>
+                            </div>
+                        </div>
+                        
+                        <div class="requirements">
+                            <h3 class="hindi-text">आवश्यकताएं:</h3>
+                            <ul class="hindi-text">
+                                <li>गीजर इंस्टालेशन, रिपेयर और मेंटेनेंस में अनुभव</li>
+                                <li>इलेक्ट्रिकल और प्लंबिंग कनेक्शन की जानकारी</li>
+                                <li>थर्मोस्टेट और हीटिंग एलिमेंट समस्याओं को हैंडल करने की क्षमता</li>
+                                <li>इलेक्ट्रिकल उपकरणों के साथ सुरक्षा जागरूक</li>
+                                <li>विश्वसनीय और समय का पाबंद</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="#" class="apply-btn">Apply Now</a>
+                    </div>
+                </div>
+                
+                <!-- Plumber Job in Hindi -->
+                <div class="job-card">
+                    <div class="job-header">
+                        <div class="job-icon">
+                            <i class="fas fa-faucet"></i>
+                        </div>
+                        <div class="job-title hindi-text">प्लंबर</div>
+                    </div>
+                    <div class="job-body">
+                        <div class="job-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Position:</span>
+                                <span class="detail-value hindi-text">पेशेवर प्लंबर</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Experience:</span>
+                                <span class="detail-value hindi-text">न्यूनतम 2 वर्ष</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Salary:</span>
+                                <span class="detail-value">₹13,000 - ₹18,000/month</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Location:</span>
+                                <span class="detail-value hindi-text">सोनीपत और आसपास के इलाके</span>
+                            </div>
+                        </div>
+                        
+                        <div class="requirements">
+                            <h3 class="hindi-text">आवश्यकताएं:</h3>
+                            <ul class="hindi-text">
+                                <li>आवासीय प्लंबिंग कार्य में अनुभव</li>
+                                <li>पाइप फिटिंग, ड्रेनेज सिस्टम और फिक्स्चर की जानकारी</li>
+                                <li>बाथरूम और किचन की इंस्टालेशन और रिपेयर करने की क्षमता</li>
+                                <li>अपने प्लंबिंग टूल्स और उपकरण</li>
+                                <li>समस्या समाधान कौशल</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="#" class="apply-btn">Apply Now</a>
+                    </div>
+                </div>
+                
+                <!-- Electrician Job in Hindi -->
+                <div class="job-card">
+                    <div class="job-header">
+                        <div class="job-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="job-title hindi-text">इलेक्ट्रीशियन</div>
+                    </div>
+                    <div class="job-body">
+                        <div class="job-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Position:</span>
+                                <span class="detail-value hindi-text">इलेक्ट्रिकल मैकेनिक</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Experience:</span>
+                                <span class="detail-value hindi-text">न्यूनतम 2 वर्ष</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Salary:</span>
+                                <span class="detail-value">₹13,000 - ₹18,000/month</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Location:</span>
+                                <span class="detail-value hindi-text">सोनीपत और आसपास के इलाके</span>
+                            </div>
+                        </div>
+                        
+                        <div class="requirements">
+                            <h3 class="hindi-text">आवश्यकताएं:</h3>
+                            <ul class="hindi-text">
+                                <li>आवासीय इलेक्ट्रिकल कार्य में अनुभव</li>
+                                <li>वायरिंग, सर्किट और इलेक्ट्रिकल सेफ्टी की जानकारी</li>
+                                <li>स्विच, सॉकेट और फिक्स्चर इंस्टॉल करने की क्षमता</li>
+                                <li>इलेक्ट्रिकल कोड और स्टैंडर्ड से परिचित</li>
+                                <li>अपने इलेक्ट्रिकल टूल्स और टेस्टिंग उपकरण</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="#" class="apply-btn">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="benefits-section">
+                <h2>Why Work With Us?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div>
+                            <h3>Competitive Salary</h3>
+                            <p>Attractive pay with performance bonuses</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div>
+                            <h3>Supportive Team</h3>
+                            <p>Work with experienced professionals</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <div>
+                            <h3>Tools & Equipment</h3>
+                            <p>Access to quality tools and equipment</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <h3>Career Growth</h3>
+                            <p>Opportunities for advancement</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Job Security</h3>
+                            <p>Stable work with growing company</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <div>
+                            <h3>Training</h3>
+                            <p>Regular skill development sessions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Call Us</h3>
+                    <p>88160-14071</p>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Us</h3>
+                    <p>care@sonipathomeservice.com</p>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Visit Us</h3>
+                    <p>128/1, Sainipura, Sonipat-131001</p>
+                </div>
+            </div>
+            
+            <div class="cta-section">
+                <h2>Ready to Join Our Team?</h2>
+                <p>If you have the skills and experience we're looking for, don't hesitate to apply. We're always looking for talented professionals to join our growing team.</p>
+                <a href="#" class="cta-btn">Apply for Multiple Positions</a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy; 2023 Sonipat Home Service. All rights reserved.</p>
+            <p>Contact: care@sonipathomeservice.com | Phone: 88160-14071</p>
+            <p>Office: 128/1, Sainipura, Sonipat-131001</p>
+        </footer>
+    </div>
+</body>
+</html>
