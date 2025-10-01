@@ -1,2 +1,2 @@
-# .github.io
+index.html
 Tested
